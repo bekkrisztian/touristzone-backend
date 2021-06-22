@@ -19,7 +19,7 @@ public class SpectacleDtoController {
 	// get spectacleDto list
 	@RequestMapping(value = "/spectacles/spectacledto", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
-	public List<SpectacleDto> getAllSpectacleDtoById() {
+	public List<SpectacleDto> getAllSpectacleByDto() {
 		List<SpectacleDto> spectacleDtos = spectacleDtoServiceImpl.getSpectacleDtoList();
 		return spectacleDtos;
 	}

@@ -17,10 +17,10 @@ public class Opinion {
 	@SequenceGenerator(name="opinion_generator", sequenceName = "opinion_seq", allocationSize=50)
     private Long id;
 
-	@Column(name = "email")
+	@Column(name = "email", nullable = false)
 	private String email;
 	
-	@Column(name = "opinion", columnDefinition = "TEXT")
+	@Column(name = "opinion", columnDefinition = "TEXT", nullable = false)
 	private String opinion;
 	
 

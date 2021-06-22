@@ -48,14 +48,14 @@ public class SpectacleController {
 
     // save spectacle
     @PostMapping("/spectacles/save")
-    public ResponseEntity<Void> saverOrUpdateSpectacle(@RequestBody Spectacle spectacle) {
+    public ResponseEntity<Void> saveSpectacle(@RequestBody Spectacle spectacle) {
         spectacleService.saveSpectacle(spectacle);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
     
     // update spectacle
     @PutMapping("/spectacles/save/{id}")
-    Spectacle replaceSpectacle(@RequestBody Spectacle newSpectacle, @PathVariable Long id) {
+    Spectacle updateSpectacle(@RequestBody Spectacle newSpectacle, @PathVariable Long id) {
       
       return spectacleRepository.findById(id)
         .map(spectacle -> {
@@ -81,7 +81,7 @@ public class SpectacleController {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
     
-    // search spectace by name
+    // search spectacle by name
     @RequestMapping("/spectacles/searchbykeyword")
     public Page<Spectacle> searchByKeyword(@RequestParam String keyword, Pageable pageable) {
     	if(keyword != null) {
